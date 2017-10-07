@@ -1,6 +1,6 @@
 #ifndef UNTITLED1_DECK_H
 #define UNTITLED1_DECK_H
-
+/* NOTE THIS CLASS WILL BE FINISHED FOR YOU, YOU DO NOT NEED TO WRITE ANY CODE FOR THIS CLASS*/
 
 #include "doubly_linked_list.h"
 #include <iostream>
@@ -33,7 +33,6 @@ public:
     std::string check_card(unsigned position);//return the value of key in dictionary for a card in deck
 
     friend std::ostream& operator << (std::ostream& stream, const deck rhs);//print whole deck
-    //TODO: create definitions for all functions
 };
 
 

@@ -12,7 +12,7 @@ class doubly_linked_list {
 public:
     doubly_linked_list();
     doubly_linked_list(std::vector <unsigned> values );
-    doubly_linked_list(doubly_linked_list);
+    doubly_linked_list(const doubly_linked_list& original);
     ~doubly_linked_list();
 
     unsigned get_data(unsigned position);
@@ -31,7 +31,6 @@ public:
     void swap_set(unsigned position1_from, unsigned position1_to, unsigned position2_from, unsigned position2_to);
 
     doubly_linked_list &operator=(const doubly_linked_list& RHS);
-    //TODO: create definitions for all functions, as well as descriptions of how they should work
 };
 
 
