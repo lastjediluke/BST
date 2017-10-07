@@ -1,7 +1,3 @@
-//
-// Created by Bryan on 10/6/2017.
-//
-
 #ifndef UNTITLED1_DOUBLY_LINKED_LIST_H
 #define UNTITLED1_DOUBLY_LINKED_LIST_H
 

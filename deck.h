@@ -1,7 +1,3 @@
-//
-// Created by Bryan on 10/6/2017.
-//
-
 #ifndef UNTITLED1_DECK_H
 #define UNTITLED1_DECK_H
 
@@ -28,8 +24,11 @@ public:
     void overhand_shuffle_back();
 
     deck draw(unsigned number_of_cards);//draw from top of deck
-    deck pull(unsigned position1, unsigned position2);//pull from anywhere in deck
+    deck pull(unsigned position1);//pull from anywhere in deck
+    deck pull_multiple(unsigned number_of_card, unsigned position); //pull an arbitrary number of cards from somewhere in the deck
+    deck split(unsigned position); // Split the deck at a certain position and return the new deck
     deck* deal(unsigned number_of_players, unsigned number_of_cards);//to deal in a circle. Return an array of each new hand
+    void burn(); // Remove and destroy a card from the deck
 
     std::string check_card(unsigned position);//return the value of key in dictionary for a card in deck
 

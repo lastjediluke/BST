@@ -1,7 +1,3 @@
-//
-// Created by Bryan on 10/6/2017.
-//
-
 #ifndef UNTITLED1_NODE_H
 #define UNTITLED1_NODE_H
 
