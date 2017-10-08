@@ -12,6 +12,10 @@ doubly_linked_list::doubly_linked_list(const doubly_linked_list& original) {
 
 }
 
+doubly_linked_list::doubly_linked_list(unsigned input) {
+
+}
+
 doubly_linked_list::~doubly_linked_list() {
 
 }
@@ -76,3 +80,4 @@ void doubly_linked_list::swap_set(unsigned position1_from, unsigned position1_to
 doubly_linked_list &doubly_linked_list::operator=(const doubly_linked_list &RHS) {
 //    return <#initializer#>;
 }
+

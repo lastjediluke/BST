@@ -24,8 +24,8 @@ public:
     void overhand_shuffle_back();
 
     deck draw(unsigned number_of_cards);//draw from top of deck
-    deck pull(unsigned position1);//pull from anywhere in deck
-    deck pull_multiple(unsigned number_of_card, unsigned position); //pull an arbitrary number of cards from somewhere in the deck
+    deck pull(unsigned position);//pull from anywhere in deck
+    deck pull(unsigned position, unsigned number_of_card); //pull an arbitrary number of cards from somewhere in the deck
     deck split(unsigned position); // Split the deck at a certain position and return the new deck
     deck operator+(const deck& rhs )const;//returns deck with *this appended to rhs does not alter *this or rhs
     deck &operator=(const deck& rhs);
