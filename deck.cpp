@@ -1,7 +1,10 @@
 #include "deck.h"
+#include <fstream>
 /* NOTE THIS CLASS WILL BE FINISHED FOR YOU, YOU DO NOT NEED TO WRITE ANY CODE FOR THIS CLASS*/
-deck::deck() {
 
+const int BUFFER_SIZE = 500;
+
+deck::deck() {
 }
 
 deck::deck(std::string rules, std::string deck_list) {
@@ -9,7 +12,15 @@ deck::deck(std::string rules, std::string deck_list) {
 }
 
 std::vector<std::string> deck::load(std::string file) {
-    return std::vector<std::string>();
+    std::ifstream in_file(file);
+    std::vector<std::string> input_parse;
+    char temp[BUFFER_SIZE];
+
+    while(in_file.good()) {
+        in_file.getline(temp, BUFFER_SIZE, ',');
+        input_parse.emplace_back(temp);
+    }
+    return input_parse;
 }
 
 void deck::save(std::string file) {
@@ -57,5 +68,5 @@ std::string deck::check_card(unsigned position) {
 }
 
 std::ostream &operator<<(std::ostream &stream, const deck rhs) {
-    return <#initializer#>;
+//    return <#initializer#>;
 }
