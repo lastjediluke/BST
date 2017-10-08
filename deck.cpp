@@ -42,20 +42,32 @@ void deck::overhand_shuffle_back() {
 }
 
 deck deck::draw(unsigned number_of_cards) {
-    return deck();
+    deck return_deck = deck(); // Create new deck to return;
+    return_deck.card_rules = card_rules; // Copy the card rules into return deck
+    return_deck.cards = cards.split_after(0); // Split cards at position 0 and store it in new deck
+    return return_deck;
 }
 
-deck deck::pull(unsigned position1) {
-    deck = get_data(unsigned position)
-    return deck();
+// Pull a single card from the deck
+deck deck::pull(unsigned position) {
+    deck return_deck = deck(); // Create new deck to return
+    return_deck.card_rules = card_rules; // Copy the card rules into return deck
+    return_deck.cards = cards.split_set(position, position); // Copy the card into the new deck
+    return return_deck;
 }
 
 deck deck::pull(unsigned position, unsigned number_of_card) {
-    return deck();
+    deck return_deck = deck(); // Create new deck to return
+    return_deck.card_rules = card_rules; // Copy the card rules into return deck
+    return_deck.cards = cards.split_set(position, position+number_of_card); // Copy the card into the new deck
+    return return_deck;
 }
 
 deck deck::split(unsigned position) {
-    return deck();
+    deck return_deck = deck(); // Create new deck to return;
+    return_deck.card_rules = card_rules; // Copy the card rules into return deck
+    return_deck.cards = cards.split_after(position); // Split cards at input position and store it in new deck
+    return return_deck;
 }
 
 deck *deck::deal(unsigned number_of_players, unsigned number_of_cards) {
