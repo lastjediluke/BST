@@ -27,12 +27,14 @@ public:
     deck pull(unsigned position);//pull from anywhere in deck
     deck pull(unsigned position, unsigned number_of_card); //pull an arbitrary number of cards from somewhere in the deck
     deck split(unsigned position); // Split the deck at a certain position and return the new deck
-    deck* deal(unsigned number_of_players, unsigned number_of_cards);//to deal in a circle. Return an array of each new hand
+    deck operator+(const deck& rhs )const;//returns deck with *this appended to rhs does not alter *this or rhs
+    deck &operator=(const deck& rhs);
+    std::vector<deck> deal(unsigned number_of_players, unsigned number_of_cards);//to deal in a circle. Return an array of each new hand
     void burn(); // Remove and destroy a card from the deck
 
     std::string check_card(unsigned position);//return the value of key in dictionary for a card in deck
 
-    friend std::ostream& operator << (std::ostream& stream, const deck rhs);//print whole deck
+    friend std::ostream& operator << (std::ostream& stream, deck rhs);//print whole deck
 };
 
 

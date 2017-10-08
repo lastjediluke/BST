@@ -21,6 +21,8 @@ public:
     unsigned get_size();
 
     void append(unsigned data);
+    void merge(doubly_linked_list rhs);
+    doubly_linked_list operator+(const doubly_linked_list& rhs )const;//returns list with *this appended to rhs does not alter *this or rhs
     void insert_before(unsigned position, unsigned data);
     void insert_after(unsigned position, unsigned data);
     void remove(unsigned position);
