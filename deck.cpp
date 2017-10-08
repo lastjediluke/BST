@@ -60,11 +60,11 @@ deck *deck::deal(unsigned number_of_players, unsigned number_of_cards) {
 }
 
 void deck::burn() {
-
+    cards.remove(0);
 }
 
 std::string deck::check_card(unsigned position) {
-    return std::string();
+    return card_rules[cards.get_data(position)];
 }
 
 std::ostream &operator<<(std::ostream &stream, const deck rhs) {
