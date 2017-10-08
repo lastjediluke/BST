@@ -115,10 +115,10 @@ std::string deck::check_card(unsigned position) {
 }
 
 std::ostream &operator<<(std::ostream &stream, const deck rhs) {
-    std::vector Deck = rhs.cards.get_set(0,rhs.cards.get_size()-1);
 
-    for (int i = 0; i < Deck.size(); ++i) {
-        stream << card_rules[Deck[i]];
+
+    for (int i = 0; i < cards.get_size(); ++i) {
+        stream << card_rules[cards.get_data(i)];
     }
     stream.flush();
     return stream;
