@@ -103,7 +103,15 @@ deck &deck::operator=(const deck &rhs) {
 
 
 std::vector<deck> deck::deal(unsigned number_of_players, unsigned number_of_cards) {
-    return nullptr;
+    std::vector<deck> player_hands;
+
+    player_hands.resize(number_of_cards);
+    for (int i = 0; i < number_of_cards; ++i) {
+        for (int j = 0; !cards.is_empty() && j < number_of_players; ++j) {
+            player_hands[j].draw(1);
+        }
+    }
+    return player_hands;
 }
 
 void deck::burn() {
@@ -115,7 +123,6 @@ std::string deck::check_card(unsigned position) {
 }
 
 std::ostream &operator<<(std::ostream &stream, const deck rhs) {
-
 
     for (int i = 0; i < cards.get_size(); ++i) {
         stream << card_rules[cards.get_data(i)];

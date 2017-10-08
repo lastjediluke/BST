@@ -35,6 +35,8 @@ public:
     void swap_set(unsigned position1_from, unsigned position1_to, unsigned position2_from, unsigned position2_to);
 
     doubly_linked_list &operator=(const doubly_linked_list& RHS);
+
+    bool is_empty();
 };
 
 

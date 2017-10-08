@@ -81,3 +81,7 @@ doubly_linked_list &doubly_linked_list::operator=(const doubly_linked_list &RHS)
 //    return <#initializer#>;
 }
 
+bool doubly_linked_list::is_empty() {
+//    return false;
+}
+
