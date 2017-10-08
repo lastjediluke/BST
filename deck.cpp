@@ -4,8 +4,7 @@
 
 const int BUFFER_SIZE = 500;
 
-deck::deck() {
-}
+deck::deck()=default;
 
 deck::deck(std::string rules, std::string deck_list) {
 
@@ -28,7 +27,33 @@ void deck::save(std::string file) {
 }
 
 void deck::riffle_shuffle() {
+    unsigned middle= abs(cards.get_size()/2 +(rand()%20-10))%cards.get_size();
+    doubly_linked_list right_cards= cards.split_before(middle),left_cards= cards,merged_cards ;
+    unsigned from_left=left_cards.get_size()-1, to_left=left_cards.get_size()-1,
+            from_right=right_cards.get_size()-1, to_right=right_cards.get_size()-1, riffle_count;
 
+    while(to_left > 0 || from_right > 0){
+        riffle_count=(unsigned)abs(rand()%4+1);
+        from_left= (from_left-riffle_count < 0)? 0: from_left-riffle_count;
+        riffle_count=(unsigned)abs(rand()%4+1);
+        from_right= (from_right-riffle_count < 0)? 0: from_right-riffle_count;
+
+        if(to_left > 0 && from_right > 0){
+            merged_cards=merged_cards+ left_cards.split_set(from_left,to_left);
+            merged_cards=merged_cards+ right_cards.split_set(from_right,to_right);
+        }
+        else if(to_left > 0){
+            from_left=0;
+            merged_cards=merged_cards+ left_cards.split_set(from_left,to_left);
+        }
+        else{
+            from_right=0;
+            merged_cards=merged_cards+ right_cards.split_set(from_right,to_right);
+        }
+        to_left=from_left;
+        from_right=to_right;
+    }
+    cards=merged_cards;
 }
 
 void deck::overhand_shuffle_front() {
