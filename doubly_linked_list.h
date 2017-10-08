@@ -16,7 +16,8 @@ public:
     ~doubly_linked_list();
 
     unsigned get_data(unsigned position);
-    unsigned get_set(unsigned position_from, unsigned position_to);
+    std::vector<unsigned> get_set(unsigned position_from, unsigned position_to);
+    unsigned get_size();
 
     void append(unsigned data);
     void insert_before(unsigned position, unsigned data);

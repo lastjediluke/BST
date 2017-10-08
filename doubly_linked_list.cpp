@@ -20,7 +20,11 @@ unsigned doubly_linked_list::get_data(unsigned position) {
     return 0;
 }
 
-unsigned doubly_linked_list::get_set(unsigned position_from, unsigned position_to) {
+std::vector<unsigned> doubly_linked_list::get_set(unsigned position_from, unsigned position_to) {
+//    return ;
+}
+
+unsigned doubly_linked_list::get_size() {
     return 0;
 }
 
@@ -64,3 +68,4 @@ void doubly_linked_list::swap_set(unsigned position1_from, unsigned position1_to
 doubly_linked_list &doubly_linked_list::operator=(const doubly_linked_list &RHS) {
 //    return <#initializer#>;
 }
+
