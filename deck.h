@@ -25,7 +25,7 @@ public:
 
     deck draw(unsigned number_of_cards);//draw from top of deck
     deck pull(unsigned position1);//pull from anywhere in deck
-    deck pull_multiple(unsigned number_of_card, unsigned position); //pull an arbitrary number of cards from somewhere in the deck
+    deck pull(unsigned position, unsigned number_of_card); //pull an arbitrary number of cards from somewhere in the deck
     deck split(unsigned position); // Split the deck at a certain position and return the new deck
     deck* deal(unsigned number_of_players, unsigned number_of_cards);//to deal in a circle. Return an array of each new hand
     void burn(); // Remove and destroy a card from the deck

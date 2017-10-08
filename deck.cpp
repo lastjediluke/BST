@@ -5,6 +5,8 @@
 const int BUFFER_SIZE = 500;
 
 deck::deck() {
+    cards = doubly_linked_list();
+    std::map<int, std::string> deck::card_rules;
 }
 
 deck::deck(std::string rules, std::string deck_list) {
@@ -44,10 +46,11 @@ deck deck::draw(unsigned number_of_cards) {
 }
 
 deck deck::pull(unsigned position1) {
+    deck = get_data(unsigned position)
     return deck();
 }
 
-deck deck::pull_multiple(unsigned number_of_card, unsigned position) {
+deck deck::pull(unsigned position, unsigned number_of_card) {
     return deck();
 }
 
