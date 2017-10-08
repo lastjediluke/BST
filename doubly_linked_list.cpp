@@ -32,6 +32,14 @@ void doubly_linked_list::append(unsigned data) {
 
 }
 
+void doubly_linked_list::merge(doubly_linked_list rhs) {
+
+}
+
+doubly_linked_list doubly_linked_list::operator+(const doubly_linked_list &rhs) const {
+    return doubly_linked_list();
+}
+
 void doubly_linked_list::insert_before(unsigned position, unsigned data) {
 
 }
@@ -68,4 +76,3 @@ void doubly_linked_list::swap_set(unsigned position1_from, unsigned position1_to
 doubly_linked_list &doubly_linked_list::operator=(const doubly_linked_list &RHS) {
 //    return <#initializer#>;
 }
-

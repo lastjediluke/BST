@@ -55,7 +55,16 @@ deck deck::split(unsigned position) {
     return deck();
 }
 
-deck *deck::deal(unsigned number_of_players, unsigned number_of_cards) {
+deck deck::operator+(const deck &rhs) const {
+    return deck();
+}
+
+deck &deck::operator=(const deck &rhs) {
+//    return <#initializer#>;
+}
+
+
+std::vector<deck> deck::deal(unsigned number_of_players, unsigned number_of_cards) {
     return nullptr;
 }
 
