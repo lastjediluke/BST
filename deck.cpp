@@ -94,11 +94,17 @@ deck deck::split(unsigned position) {
 }
 
 deck deck::operator+(const deck &rhs) const {
-    return deck();
+    deck return_deck; // Create deck used to return
+    return_deck.cards = this->cards + rhs.cards; // Merge all of the cards together
+    return_deck.card_rules = this->card_rules; // Set the rules of the new deck to the left hand side
+    return_deck.card_rules.insert(rhs.card_rules.begin(), rhs.card_rules.end()); // Merge in the right rules
+    return return_deck;
 }
 
 deck &deck::operator=(const deck &rhs) {
-
+    this->cards = rhs.cards;
+    this->card_rules = rhs.card_rules;
+    return *this;
 }
 
 
