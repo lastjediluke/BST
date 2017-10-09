@@ -19,7 +19,7 @@
  *        - Keep track of your edge cases; empty, 1 item, and 2 items
  *        - Some of these functions are basically the same thing,
  *          with the index shifted or return ignored. Don't rewrite
- *          code, just call the function with correct inputs.
+ *          code, just call the function with the 'correct' inputs.
  *        - Test your doubly linked list by itself before testing it
  *          in the deck class. It will make it easier to find any bugs
  *        - Use your debugger. It is your best friend for finding

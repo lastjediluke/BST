@@ -3,9 +3,7 @@
 /* NOTE THIS CLASS WILL BE FINISHED FOR YOU, YOU DO NOT NEED TO WRITE ANY CODE FOR THIS CLASS*/
 
 #include "doubly_linked_list.h"
-#include <iostream>
 #include <string>
-#include <vector>
 #include <map>
 
 class deck {

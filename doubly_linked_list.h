@@ -1,9 +1,9 @@
 #ifndef UNTITLED1_DOUBLY_LINKED_LIST_H
 #define UNTITLED1_DOUBLY_LINKED_LIST_H
 
-
-#include <vector>
 #include "node.h"
+#include <vector>
+#include <iostream>
 
 class doubly_linked_list {
     node *head, *tail;
