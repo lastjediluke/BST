@@ -1,4 +1,33 @@
 #include "doubly_linked_list.h"
+/*
+ * You will be writing all of the code for each of these functions.
+ * Remember, this is a doubly linked list, not an array. You need to
+ * be using pointers, and not overwriting your values like you would
+ * in an array.
+ *
+ * If you need to write auxiliary functions, you are more than welcome
+ * to, but you can't change the signature of any of the functions we
+ * have written.
+ *
+ * Information on doubly linked lists can be found at
+ * https://en.wikipedia.org/wiki/Doubly_linked_list
+ *
+ * Hints: - Keep track of size. If you add or delete something, you
+ *          need to change size.
+ *        - This isn't an array, so moving things around is actually
+ *          a lot easier. Just change the pointers to the objects.
+ *        - Keep track of your edge cases; empty, 1 item, and 2 items
+ *        - Test your doubly linked list by itself before testing it
+ *          in the deck class. It will make it easier to find any bugs
+ *        - Use your debugger. It is your best friend for finding
+ *          issues!
+ *        - Don't forget to ask for help on Slack!
+ *
+ * We will be making changes throughout the week to the deck.cpp as
+ * well as adding testing into the project. Make sure to pull and
+ * merge frequently.
+ */
+
 
 // Default constructor
 doubly_linked_list::doubly_linked_list() {
@@ -86,7 +115,7 @@ void doubly_linked_list::swap(unsigned position1, unsigned position2) {
 
 }
 
-// Swap two sets of cards. The sets are inclusive. USE POINTERS. Do not just swap the values!
+// Swap two sets of cards. The sets are inclusive. USE POINTERS!
 void doubly_linked_list::swap_set(unsigned position1_from, unsigned position1_to, unsigned position2_from,
                                   unsigned position2_to) {
 
