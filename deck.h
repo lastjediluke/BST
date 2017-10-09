@@ -17,11 +17,9 @@ public:
     deck(std::string rules, std::string deck_list);
 
     std::vector<std::string> load(std::string file);//should be called twice in constructor
-    void save(std::string file); //use if wanted to save deck state to new file
 
     void riffle_shuffle();
-    void overhand_shuffle_front();
-    void overhand_shuffle_back();
+    void overhand_shuffle();
 
     deck draw(unsigned number_of_cards);//draw from top of deck
     deck pull(unsigned position, unsigned number_of_card); //pull an arbitrary number of cards from somewhere in the deck
