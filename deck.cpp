@@ -119,6 +119,12 @@ deck &deck::operator=(const deck &rhs) {
     return *this;
 }
 
+deck &deck::operator+=(const deck &rhs) {
+    this->cards += rhs.cards;
+    this->card_rules.insert(rhs.card_rules.begin(), rhs.card_rules.end());
+    return *this;
+}
+
 std::vector<deck> deck::deal(unsigned number_of_players, unsigned number_of_cards) {
     std::vector<deck> player_hands;
 
@@ -151,3 +157,4 @@ std::ostream &operator<<(std::ostream &stream, const deck rhs) {
 unsigned deck::size() {
     return cards.get_size();
 }
+

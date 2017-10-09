@@ -129,6 +129,11 @@ doubly_linked_list &doubly_linked_list::operator=(const doubly_linked_list &RHS)
 //    return <#initializer#>;
 }
 
+// Append the rhs to the end of the this list
+doubly_linked_list &doubly_linked_list::operator+=(const doubly_linked_list &RHS) {
+//    return <#initializer#>;
+}
+
 unsigned doubly_linked_list::get_size() {
     return size;
 }
