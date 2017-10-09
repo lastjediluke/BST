@@ -19,6 +19,7 @@ public:
     unsigned get_data(unsigned position);
     std::vector<unsigned> get_set(unsigned position_from, unsigned position_to);
     unsigned get_size();
+    bool is_empty();
 
     void append(unsigned data);
     void merge(doubly_linked_list rhs);
@@ -36,7 +37,7 @@ public:
 
     doubly_linked_list &operator=(const doubly_linked_list& RHS);
 
-    bool is_empty();
+
 };
 
 

@@ -21,7 +21,7 @@ doubly_linked_list::~doubly_linked_list() {
 }
 
 unsigned doubly_linked_list::get_data(unsigned position) {
-    return 0;
+//    return ;
 }
 
 std::vector<unsigned> doubly_linked_list::get_set(unsigned position_from, unsigned position_to) {
@@ -29,8 +29,14 @@ std::vector<unsigned> doubly_linked_list::get_set(unsigned position_from, unsign
 }
 
 unsigned doubly_linked_list::get_size() {
-    return 0;
+//    return ;
 }
+
+bool doubly_linked_list::is_empty() {
+//    return ;
+}
+
+
 
 void doubly_linked_list::append(unsigned data) {
 
@@ -41,7 +47,7 @@ void doubly_linked_list::merge(doubly_linked_list rhs) {
 }
 
 doubly_linked_list doubly_linked_list::operator+(const doubly_linked_list &rhs) const {
-    return doubly_linked_list();
+//    return ;
 }
 
 void doubly_linked_list::insert_before(unsigned position, unsigned data) {
@@ -57,15 +63,15 @@ void doubly_linked_list::remove(unsigned position) {
 }
 
 doubly_linked_list doubly_linked_list::split_before(unsigned position) {
-    return doubly_linked_list();
+//    return ;
 }
 
 doubly_linked_list doubly_linked_list::split_after(unsigned position) {
-    return doubly_linked_list();
+//    return ;
 }
 
 doubly_linked_list doubly_linked_list::split_set(unsigned position_from, unsigned position_to) {
-    return doubly_linked_list();
+//    return ;
 }
 
 void doubly_linked_list::swap(unsigned position1, unsigned position2) {
@@ -80,8 +86,3 @@ void doubly_linked_list::swap_set(unsigned position1_from, unsigned position1_to
 doubly_linked_list &doubly_linked_list::operator=(const doubly_linked_list &RHS) {
 //    return <#initializer#>;
 }
-
-bool doubly_linked_list::is_empty() {
-//    return false;
-}
-
