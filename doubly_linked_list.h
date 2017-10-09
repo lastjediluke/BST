@@ -6,7 +6,7 @@
 #include "node.h"
 
 class doubly_linked_list {
-    node *next, *prev;
+    node *head, *tail;
     unsigned size;
 
 public:
