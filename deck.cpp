@@ -61,7 +61,7 @@ void deck::overhand_shuffle() {
     unsigned from, card_count;
     while(!cards.is_empty()){
         card_count=(unsigned)rand()%7;
-        from= cards.get_size() < card_count? 0 : (cards.get_size()-card_count)+1;
+        from= cards.get_size() < card_count? 0 : (cards.get_size()-card_count);
         merge_deck = cards.split_before(from);
     }
     cards=merge_deck;
