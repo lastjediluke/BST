@@ -22,10 +22,6 @@ std::vector<std::string> deck::load(std::string file) {
     return input_parse;
 }
 
-void deck::save(std::string file) {
-
-}
-
 void deck::riffle_shuffle() {
     unsigned middle= abs(cards.get_size()/2 +(rand()%20-10))%cards.get_size();
     doubly_linked_list right_cards= cards.split_before(middle),left_cards= cards,merged_cards ;

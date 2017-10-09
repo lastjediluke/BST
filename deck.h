@@ -17,7 +17,6 @@ public:
     deck(std::string rules, std::string deck_list);
 
     std::vector<std::string> load(std::string file);//should be called twice in constructor
-    void save(std::string file); //use if wanted to save deck state to new file
 
     void riffle_shuffle();
     void overhand_shuffle();
