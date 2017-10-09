@@ -41,28 +41,29 @@ void deck::overhand_shuffle_back() {
 
 }
 
-deck deck::draw(unsigned number_of_cards) {
+// Draw a single card off of the top
+deck deck::draw(unsigned number_of_cards = 1) {
+    doubly_linked_list temp; // Create a temp variable to store the right hand side of the split
+    temp = cards.split_before(0+number_of_cards);
+
     deck return_deck = deck(); // Create new deck to return;
     return_deck.card_rules = card_rules; // Copy the card rules into return deck
-    return_deck.cards = cards.split_after(0); // Split cards at position 0 and store it in new deck
+    return_deck.cards = cards; // Set the return deck to the current deck which is the left side of the split
+
+    cards = temp; // Copy the right hand side back into temp.
+
     return return_deck;
 }
 
-// Pull a single card from the deck
-deck deck::pull(unsigned position) {
+// Pull a single or multiple cards out of the deck from any location
+deck deck::pull(unsigned position, unsigned number_of_card = 1) {
     deck return_deck = deck(); // Create new deck to return
     return_deck.card_rules = card_rules; // Copy the card rules into return deck
-    return_deck.cards = cards.split_set(position, position); // Copy the card into the new deck
+    return_deck.cards = cards.split_set(position, position+number_of_card-1); // Copy the card into the new deck
     return return_deck;
 }
 
-deck deck::pull(unsigned position, unsigned number_of_card) {
-    deck return_deck = deck(); // Create new deck to return
-    return_deck.card_rules = card_rules; // Copy the card rules into return deck
-    return_deck.cards = cards.split_set(position, position+number_of_card); // Copy the card into the new deck
-    return return_deck;
-}
-
+// Return bottom half of deck when split
 deck deck::split(unsigned position) {
     deck return_deck = deck(); // Create new deck to return;
     return_deck.card_rules = card_rules; // Copy the card rules into return deck
@@ -75,7 +76,6 @@ deck deck::operator+(const deck &rhs) const {
 }
 
 deck &deck::operator=(const deck &rhs) {
-//    return <#initializer#>;
 }
 
 
