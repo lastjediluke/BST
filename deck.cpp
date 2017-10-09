@@ -34,7 +34,7 @@ void deck::riffle_shuffle() {
 
     while(to_left > 0 || from_right > 0){
         riffle_count=(unsigned)abs(rand()%4+1);
-        from_left= (from_left-riffle_count < 0)? 0: from_left-riffle_count;
+        from_left= (from_left < riffle_count)? 0: from_left-riffle_count;
         riffle_count=(unsigned)abs(rand()%4+1);
         from_right= (from_right-riffle_count < 0)? 0: from_right-riffle_count;
 
@@ -56,12 +56,15 @@ void deck::riffle_shuffle() {
     cards=merged_cards;
 }
 
-void deck::overhand_shuffle_front() {
-
-}
-
-void deck::overhand_shuffle_back() {
-
+void deck::overhand_shuffle() {
+    doubly_linked_list merge_deck;
+    unsigned from, card_count;
+    while(!cards.is_empty()){
+        card_count=(unsigned)rand()%7;
+        from= cards.get_size() < card_count? 0 : (cards.get_size()-card_count)+1;
+        merge_deck = cards.split_before(from);
+    }
+    cards=merge_deck;
 }
 
 deck deck::draw(unsigned number_of_cards) {

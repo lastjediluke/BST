@@ -20,8 +20,7 @@ public:
     void save(std::string file); //use if wanted to save deck state to new file
 
     void riffle_shuffle();
-    void overhand_shuffle_front();
-    void overhand_shuffle_back();
+    void overhand_shuffle();
 
     deck draw(unsigned number_of_cards);//draw from top of deck
     deck pull(unsigned position);//pull from anywhere in deck
