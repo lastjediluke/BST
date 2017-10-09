@@ -98,6 +98,7 @@ deck deck::operator+(const deck &rhs) const {
 }
 
 deck &deck::operator=(const deck &rhs) {
+
 }
 
 
@@ -128,4 +129,8 @@ std::ostream &operator<<(std::ostream &stream, const deck rhs) {
     }
     stream.flush();
     return stream;
+}
+
+unsigned deck::size() {
+    return cards.get_size();
 }

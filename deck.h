@@ -30,6 +30,7 @@ public:
     void burn(); // Remove and destroy a card from the deck
 
     std::string check_card(unsigned position);//return the value of key in dictionary for a card in deck
+    unsigned size();
 
     friend std::ostream& operator << (std::ostream& stream, deck rhs);//print whole deck
 };
