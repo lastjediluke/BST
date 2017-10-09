@@ -2,7 +2,6 @@
 #include "deck.h"
 
 int main() {
-    deck newdeck;
-    std::cout << "Hello, World!" << std::endl;
+    //deck newdeck;
     return 0;
 }

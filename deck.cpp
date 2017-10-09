@@ -1,5 +1,7 @@
 #include "deck.h"
 #include <fstream>
+#include <random>
+#include <ctime>
 /* NOTE THIS CLASS WILL BE FINISHED FOR YOU, YOU DO NOT NEED TO WRITE ANY CODE FOR THIS CLASS*/
 
 const int BUFFER_SIZE = 500;
@@ -23,15 +25,20 @@ std::vector<std::string> deck::load(std::string file) {
 }
 
 void deck::riffle_shuffle() {
-    unsigned middle= abs(cards.get_size()/2 +(rand()%20-10))%cards.get_size();
+    /* RANDOM NUMBER GENERATION CODE */
+    std::mt19937 simple_rand; // Setup random number generator
+    simple_rand.seed((unsigned)std::time(nullptr)); // Use for 'actual' random number generation
+    //simple_rand.seed(42); // USE FOR DEBUGGING RANDOM!
+
+    unsigned middle= abs(cards.get_size()/2 +(simple_rand()%20-10))%cards.get_size();
     doubly_linked_list right_cards= cards.split_before(middle),left_cards= cards,merged_cards ;
     unsigned from_left=left_cards.get_size()-1, to_left=left_cards.get_size()-1,
             from_right=right_cards.get_size()-1, to_right=right_cards.get_size()-1, riffle_count;
 
     while(to_left > 0 || from_right > 0){
-        riffle_count=(unsigned)abs(rand()%4+1);
+        riffle_count=(unsigned)abs(simple_rand()%4+1);
         from_left= (from_left < riffle_count)? 0: from_left-riffle_count;
-        riffle_count=(unsigned)abs(rand()%4+1);
+        riffle_count=(unsigned)abs(simple_rand()%4+1);
         from_right= (from_right-riffle_count < 0)? 0: from_right-riffle_count;
 
         if(to_left > 0 && from_right > 0){
@@ -53,10 +60,15 @@ void deck::riffle_shuffle() {
 }
 
 void deck::overhand_shuffle() {
+    /* RANDOM NUMBER GENERATION CODE */
+    std::mt19937 simple_rand; // Setup random number generator
+    simple_rand.seed((unsigned)std::time(nullptr)); // Use for 'actual' random number generation
+    //simple_rand.seed(42); // USE FOR DEBUGGING RANDOM!
+
     doubly_linked_list merge_deck;
     unsigned from, card_count;
     while(!cards.is_empty()){
-        card_count=(unsigned)rand()%7;
+        card_count=(unsigned)simple_rand()%7;
         from= cards.get_size() < card_count? 0 : (cards.get_size()-card_count);
         merge_deck = cards.split_before(from);
     }
@@ -107,7 +119,6 @@ deck &deck::operator=(const deck &rhs) {
     return *this;
 }
 
-
 std::vector<deck> deck::deal(unsigned number_of_players, unsigned number_of_cards) {
     std::vector<deck> player_hands;
 
@@ -129,9 +140,9 @@ std::string deck::check_card(unsigned position) {
 }
 
 std::ostream &operator<<(std::ostream &stream, const deck rhs) {
-
-    for (int i = 0; i < cards.get_size(); ++i) {
-        stream << card_rules[cards.get_data(i)];
+    deck temp = rhs;
+    for (unsigned i = 0; i < temp.size(); ++i) {
+        stream << temp.card_rules[temp.cards.get_data(i)];
     }
     stream.flush();
     return stream;

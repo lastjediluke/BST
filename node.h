@@ -5,9 +5,10 @@
 class node {
 public:
     node* next;
+    node* prev;
     unsigned data;
 
-    node(unsigned int data) : data(data), next(nullptr) {}
+    explicit node(unsigned int data) : data(data), next(nullptr), prev(nullptr) {}
 };
 
 
