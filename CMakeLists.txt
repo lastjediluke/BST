@@ -1,7 +1,16 @@
 cmake_minimum_required(VERSION 3.8)
-project(untitled1)
 
-set(CMAKE_CXX_STANDARD 11)
+project(Lab4_LinkedList)
 
-set(SOURCE_FILES main.cpp doubly_linked_list.cpp doubly_linked_list.h node.h deck.cpp deck.h)
-add_executable(untitled1 ${SOURCE_FILES})
+
+add_definitions(-std=c++11)
+
+set(SOURCE_FILES main.cpp)
+add_executable(Lab6_main ${SOURCE_FILES})
+
+include_directories(src)
+
+add_subdirectory(src)
+add_subdirectory(test)
+
+target_link_libraries(Lab6_main Lab6_lib)

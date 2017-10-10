@@ -1,4 +1,4 @@
-#include "deck.h"
+#include "src/deck.h"
 
 int main() {
     //deck newdeck;

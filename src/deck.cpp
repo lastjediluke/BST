@@ -30,7 +30,7 @@ void deck::riffle_shuffle() {
     simple_rand.seed((unsigned)std::time(nullptr)); // Use for 'actual' random number generation
     //simple_rand.seed(42); // USE FOR DEBUGGING RANDOM!
 
-    unsigned middle= abs(cards.get_size()/2 +(simple_rand()%20-10))%cards.get_size();
+    unsigned middle= int(abs(cards.get_size()/2 +(simple_rand()%20-10)))%cards.get_size();
     doubly_linked_list right_cards= cards.split_before(middle),left_cards= cards,merged_cards ;
     unsigned from_left=left_cards.get_size()-1, to_left=left_cards.get_size()-1,
             from_right=right_cards.get_size()-1, to_right=right_cards.get_size()-1, riffle_count;
