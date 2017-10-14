@@ -1,4 +1,4 @@
-# Doubly Linked List #
+# Lab 6: Doubly Linked List #
 For this lab, you will be implementing a linked list, but not just any linked list, a doubly linked list. One more link than you are used to. 
 
 This additional link lets us traverse both ways on the list, in addition to letting us create a hybrid structure that has the best features of both a stack and a queue. We can add an item to the beginning or end of the list in *O(1)* and we can access the beginning and end of the list in *O(1)* as well. Also, just like stacks and queues, they can be arbitrarily long because their size isn't defined at initialization.  
