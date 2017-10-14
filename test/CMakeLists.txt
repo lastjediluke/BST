@@ -1,14 +1,15 @@
-project(Lab6_Test)
+project(Lab_Tests)
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 add_executable(runBasicTests
-        doubly_test.cpp
+        lab06_tests.cpp
+        lab07_tests.cpp
 )
 
 add_subdirectory(lib/gtest-1.7.0)
 
 target_link_libraries(runBasicTests gtest gtest_main)
-target_link_libraries(runBasicTests Lab6_lib)
+target_link_libraries(runBasicTests lab6_lib)
 
 

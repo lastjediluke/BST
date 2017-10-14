@@ -1,16 +1,17 @@
 cmake_minimum_required(VERSION 3.8)
 
-project(Lab4_LinkedList)
+project(cmpe126f17_labs)
 
 
 add_definitions(-std=c++11)
 
 set(SOURCE_FILES main.cpp)
-add_executable(Lab6_main ${SOURCE_FILES})
+add_executable(labs_main ${SOURCE_FILES})
 
-include_directories(src)
+include_directories(lib/lab06/inc)
 
-add_subdirectory(src)
+add_subdirectory(lib/lab06 lab6_lib)
 add_subdirectory(test)
 
-target_link_libraries(Lab6_main Lab6_lib)
+
+target_link_libraries(labs_main lab6_lib)

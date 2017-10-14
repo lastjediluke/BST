@@ -1,4 +1,4 @@
-#include "doubly_linked_list.h"
+#include "../inc/doubly_linked_list.h"
 /*
  * You will be writing all of the code for each of these functions.
  * Remember, this is a doubly linked list, not an array. You need to
