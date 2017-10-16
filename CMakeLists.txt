@@ -8,9 +8,11 @@ add_definitions(-std=c++11)
 set(SOURCE_FILES main.cpp)
 add_executable(labs_main ${SOURCE_FILES})
 
-include_directories(lib/lab06/inc)
-
+include_directories(lib/lab06/inc lib/lab07/inc)
 add_subdirectory(lib/lab06 lab6_lib)
+add_subdirectory( lib/lab07 lab7_lib)
+
+
 add_subdirectory(test)
 
 
