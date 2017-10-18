@@ -2,7 +2,7 @@
 
 // Construct an empty tree
 tree::tree(){
-
+root = nullptr;
 }
 
 // Deconstruct tree
@@ -11,8 +11,22 @@ tree::~tree(){
 }
 
 // Insert
-void tree::insert(int value){
+void tree::insert(node * obj, int value){
 
+
+    if (root == nullptr) {
+        auto *te
+}
+    else if (value < root->data){
+        auto *temp =
+
+}
+    else if (value > root->data){
+
+}
+    else{
+
+    }
 }
 
 // Remove key
@@ -21,7 +35,7 @@ bool tree::remove(int key){
 }
 
 // How many of that key are in the tree?
-int get_frequency(int key){
+int tree::get_frequency(int key){
 
 }
 
@@ -47,5 +61,9 @@ unsigned tree::depth(){
 
 // Print the tree least to greatest, Include duplicates
 void tree::print(){
+
+}
+
+bool tree::in_tree (int value){
 
 }

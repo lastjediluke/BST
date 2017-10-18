@@ -7,7 +7,7 @@ class tree {
 public:
     tree();
     ~tree();
-    void insert(int value);
+    void insert(node *obj, int value);
     bool remove(int value);
     bool in_tree(int value);
     int get_frequency(int key);

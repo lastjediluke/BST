@@ -8,7 +8,13 @@ public:
     node *left, *right;
     int data;
     unsigned frequency;
-    explicit node(int data) : data(data), frequency(1), next(nullptr), prev(nullptr) {}
+    explicit node(int data) : data(data), frequency(1), left(nullptr), right(nullptr) {}
+    node(){
+        data = 0;
+        frequency = 0;
+        left = nullptr;
+        right = nullptr;
+    }
 };
 
 
