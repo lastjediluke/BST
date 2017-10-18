@@ -11,23 +11,21 @@ tree::~tree(){
 }
 
 // Insert
-void tree::insert(node * obj, int value){
-
-
-    if (root == nullptr) {
-        auto *te
+node* tree::insert(int value){
+if (this->root == nullptr){
+    auto *temp = new node(value);
 }
-    else if (value < root->data){
-        auto *temp =
-
-}
-    else if (value > root->data){
-
-}
-    else{
-
+    if (value < this->root->data){
+        this->root->left = insert(value);
     }
+    else if (value > this->root->data){
+        this->root->right = insert(value);
+    }
+    return this->root;
+
 }
+
+
 
 // Remove key
 bool tree::remove(int key){

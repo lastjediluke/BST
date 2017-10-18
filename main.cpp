@@ -4,6 +4,6 @@
 #include <iostream>
 
 int main() {
-    tree* a = nullptr;
+
     return 0;
 }
